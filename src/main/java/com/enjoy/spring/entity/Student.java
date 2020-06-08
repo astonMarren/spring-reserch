@@ -1,7 +1,12 @@
 package com.enjoy.spring.entity;
 
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
 
-public class Student {
+import javax.annotation.PostConstruct;
+
+//@Component
+public class Student  implements InitializingBean{ //
 	private String name;
 	private int age;
 	public String getName() {
@@ -16,6 +21,15 @@ public class Student {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
-	
+
+	@PostConstruct
+	public void init(){
+		System.out.println("Student PostConstruct-----");
+	}
+
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Student afterPropertiesSet-----");
+	}
 }

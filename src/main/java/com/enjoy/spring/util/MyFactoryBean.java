@@ -28,7 +28,7 @@ public class MyFactoryBean implements FactoryBean{
 				for (Annotation annotation : annotations) {
 					System.out.println(annotation);
 				}
-				System.out.println("zzz");
+				System.out.println(method.getName());
 				return null;
 			}
 		});
