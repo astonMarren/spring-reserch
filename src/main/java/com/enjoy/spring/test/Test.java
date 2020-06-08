@@ -1,6 +1,7 @@
 package com.enjoy.spring.test;
 
 import com.enjoy.app.AppConfig;
+import com.enjoy.spring.aop.LogAspect;
 import com.enjoy.spring.dao.OrderMapper;
 import com.enjoy.spring.dao.UserMapper;
 import com.enjoy.spring.entity.Y;
@@ -18,6 +19,7 @@ public class Test {
 //		System.out.println(ctx.getBean("y2"));
 //		System.out.println(ctx.getBean("myFactoryBean"));
 //		System.out.println(ctx.getBean(Z.class));
+		System.out.println(ctx.getBean(LogAspect.class));
 		UserMapper userMapper = ctx.getBean(UserMapper.class); //type注入
 		System.out.println("userMapper" + userMapper.getClass());
 		userMapper.insert();

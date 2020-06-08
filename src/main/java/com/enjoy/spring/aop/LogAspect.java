@@ -6,9 +6,10 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 @Aspect
+@Component
 public class LogAspect {
 
-    @Pointcut("within(com.enjoy.spring.dao..*)")
+    @Pointcut("execution(* com.enjoy.spring.dao.*.*(..))")
     public void pointCut(){
 
     }
