@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Param
  * @return
  **/
-public class FakeNotify {
+public class  FakeNotify {
     public static void main(String[] args) {
         ShareData shareData = new ShareData();
 

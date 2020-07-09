@@ -1,6 +1,8 @@
 package com.enjoy.spring.test;
 
 import com.enjoy.app.AppConfig;
+import com.enjoy.spring.aop.BCaculate;
+import com.enjoy.spring.aop.Caculate;
 import com.enjoy.spring.aop.LogAspect;
 import com.enjoy.spring.dao.OrderMapper;
 import com.enjoy.spring.dao.UserMapper;
@@ -19,10 +21,14 @@ public class Test {
 //		System.out.println(ctx.getBean("y2"));
 //		System.out.println(ctx.getBean("myFactoryBean"));
 //		System.out.println(ctx.getBean(Z.class));
-		System.out.println(ctx.getBean(LogAspect.class));
-		UserMapper userMapper = ctx.getBean(UserMapper.class); //type注入
-		System.out.println("userMapper" + userMapper.getClass());
-		userMapper.insert();
+//		System.out.println(ctx.getBean(LogAspect.class));
+        Caculate bean = ctx.getBean(Caculate.class);
+        System.out.println(bean.getResult(4, 2));
+        BCaculate bean2 = ctx.getBean(BCaculate.class);
+        System.out.println(bean2.getResult(9, 3));
+//		UserMapper userMapper = ctx.getBean(UserMapper.class); //type注入
+//		System.out.println("userMapper" + userMapper.getClass());
+//		userMapper.insert();
 //		System.out.println(ctx.getBean("myFactoryBean").getClass()); //type注入
 //		OrderMapper orderMapper = ctx.getBean(OrderMapper.class); //type注入
 //		userMapper.insert();

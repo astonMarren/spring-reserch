@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.enjoy.app.AppConfig;
 import com.enjoy.spring.annotation.MyScan;
 import com.enjoy.spring.dao.OrderMapper;
 import com.enjoy.spring.dao.UserMapper;
@@ -18,15 +19,18 @@ import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.StandardAnnotationMetadata;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor{
 
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
 
 	}
 
-	public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-		StandardAnnotationMetadata annotationMetadata = new StandardAnnotationMetadata(MyScan.class,true);
+	public void  postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
+		Class<AppConfig> appConfigClass = AppConfig.class;
+		MyScan annotation = appConfigClass.getAnnotation(MyScan.class);
+		System.out.println("MyBeanDefinitionRegistryPostProcessor ======" + annotation.value());
+//		StandardAnnotationMetadata annotationMetadata = new StandardAnnotationMetadata(MyScan.class,true);
 //		Set<String> value = annotationMetadata.getMetaAnnotationTypes("value");
 //		Set<String> value2 = annotationMetadata.getMetaAnnotationTypes("MyScan");
 		List<Class> mappers = new ArrayList<Class>();
