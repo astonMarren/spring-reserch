@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 
 //@Aspect
 //@Component
-public class LogAspect {
+public class LogAspectForDao {
 
-    @Pointcut("execution(* com.enjoy.spring.aop.*.*(..))")
+    @Pointcut("execution(* com.enjoy.spring.dao.*.*(..))")
     public void pointCut(){
 
     }

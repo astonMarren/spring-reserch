@@ -19,20 +19,21 @@ import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.StandardAnnotationMetadata;
 import org.springframework.stereotype.Component;
 
-@Component
+/**
+ * 容器扫描的时候放到BDmap里面，在refresh()->invokeBeanFactoryPostProcessors(beanFactory);里面执行
+ * ImportBeanDefinitionRegistrar在容器扫描的时候执行
+ **/
+//@Component
 public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor{
 
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-
+		System.out.println("BeanDefinitionRegistryPostProcessor.postProcessBeanFactory()");
 	}
 
 	public void  postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-		Class<AppConfig> appConfigClass = AppConfig.class;
+	/*	Class<AppConfig> appConfigClass = AppConfig.class;
 		MyScan annotation = appConfigClass.getAnnotation(MyScan.class);
 		System.out.println("MyBeanDefinitionRegistryPostProcessor ======" + annotation.value());
-//		StandardAnnotationMetadata annotationMetadata = new StandardAnnotationMetadata(MyScan.class,true);
-//		Set<String> value = annotationMetadata.getMetaAnnotationTypes("value");
-//		Set<String> value2 = annotationMetadata.getMetaAnnotationTypes("MyScan");
 		List<Class> mappers = new ArrayList<Class>();
 		mappers.add(UserMapper.class);
 		mappers.add(OrderMapper.class);
@@ -42,7 +43,9 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
 			beanDefinition.getConstructorArgumentValues().addGenericArgumentValue(mapper);;
 			beanDefinition.setBeanClass(MyFactoryBean2.class);
 			registry.registerBeanDefinition(mapper.getName(), beanDefinition);
-		}
+		}*/
+
+		System.out.println("BeanDefinitionRegistryPostProcessor.postProcessBeanDefinitionRegistry()");
 	}
 
 }

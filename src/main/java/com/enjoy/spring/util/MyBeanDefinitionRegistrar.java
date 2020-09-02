@@ -29,5 +29,6 @@ public class MyBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar 
 			beanDefinition.setBeanClass(MyFactoryBean2.class);
 			registry.registerBeanDefinition(mapper.getName(), beanDefinition);
 		}
+		System.out.println("ImportBeanDefinitionRegistrar.registerBeanDefinitions()");
 	}
 }

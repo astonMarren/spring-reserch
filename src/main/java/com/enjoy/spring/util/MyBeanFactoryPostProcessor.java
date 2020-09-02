@@ -8,7 +8,7 @@ import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.stereotype.Component;
 
 
-@Component
+//@Component
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor{
 	public MyBeanFactoryPostProcessor() {
 		System.out.println("MyBeanFactoryPostProcessor");

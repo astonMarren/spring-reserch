@@ -3,10 +3,10 @@ package com.enjoy.spring.aop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Caculate {
-    @Autowired
-    private BCaculate bCaculate;
+//    @Autowired
+//    private BCaculate bCaculate;
 
     public Caculate() {
         System.out.println("Caculate 创建了");

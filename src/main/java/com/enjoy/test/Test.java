@@ -4,7 +4,7 @@ import com.enjoy.spring.entity.X;
 
 public class Test {
     public static void main(String[] args) {
-        X x = new X();
-        System.out.println(null == x);
+   /*     X x = new X();
+        System.out.println(null == x);*/
     }
 }
